@@ -1,0 +1,87 @@
+
+/* Basic Styling */
+.home {
+    font-family: Arial, sans-serif;
+  }
+  
+/* Hero Banner */
+.hero {
+    background-image: url('../assets/wrap.jpeg'); /* Updated to use collage.png */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+  
+  .hero button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #d35400;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Daily Specials */
+  .specials {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .specials h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .specials-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .special {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 5px;
+    width: 200px;
+  }
+  
+  .special h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .special p {
+    font-size: 1em;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f2f2f2;
+  }
+  
+  .about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
