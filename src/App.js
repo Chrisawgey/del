@@ -1,25 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Admin from './pages/Admin';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer'; // If you have a Footer component
-
+import './App.css';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
-      {/* <Footer /> */}
+      <div className={`app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </div>
     </Router>
   );
 }
-
 
 export default App;

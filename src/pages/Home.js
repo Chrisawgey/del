@@ -1,11 +1,15 @@
 import React from 'react';
 import './Home.css';
+import wrapImage from '../assets/wrap.jpeg';
 
 function Home() {
   return (
     <div className="home">
       {/* Hero Banner */}
-      <section className="hero">
+      <section
+        className="hero"
+        style={{ backgroundImage: `url(${wrapImage})` }}
+      >
         <h1>Welcome to Our Deli</h1>
         <p>Fresh, Delicious, and Made with Love!</p>
         <button>See Our Menu</button>
@@ -15,7 +19,6 @@ function Home() {
       <section className="specials">
         <h2>Daily Specials</h2>
         <div className="specials-list">
-          {/* Replace with dynamic content later */}
           <div className="special">
             <h3>Special Sandwich</h3>
             <p>Try our chef’s special sandwich, freshly made!</p>
