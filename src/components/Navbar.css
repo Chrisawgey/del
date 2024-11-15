@@ -1,37 +1,37 @@
 /* Navbar Container */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the logo */
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 20px;
   background-color: #333;
   color: white;
   font-family: Arial, sans-serif;
-  height: 80px;
+  position: relative;
+  z-index: 2;
 }
 
 /* Logo Styling */
-.navbar-logo {
-  display: flex;
-  align-items: center;
-}
-
 .logo-image {
-  max-height: 60px;
+  max-height: 130px;
   width: auto;
+  transition: transform 0.3s ease; /* Smooth transition for the animation */
+  cursor: pointer; /* Change cursor to indicate it’s clickable */
 }
 
-/* Navbar Links */
+/* Logo Click Animation */
+.logo-image:active {
+  transform: scale(1.1) rotate(10deg); /* Slightly enlarge and rotate */
+}
+
+/* Navbar Links (Desktop) */
 .navbar-links {
   list-style: none;
   display: flex;
   gap: 20px;
-  align-items: center; /* Aligns items including the toggle switch */
-}
-
-.navbar-links li {
-  display: flex;
   align-items: center;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
 }
 
 .navbar-links li a {
@@ -52,7 +52,6 @@
   display: inline-block;
   width: 50px;
   height: 24px;
-  margin-left: 10px; /* Adds space between toggle and links */
 }
 
 .switch input {
@@ -91,4 +90,78 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  position: absolute; /* Position it absolutely */
+  right: 20px; /* Move it to the far right */
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Responsive Navbar for Phone Screens */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center; /* Center everything on mobile */
+  }
+
+  .logo-image {
+    max-height: 120px;
+  }
+
+  .hamburger {
+    display: flex; /* Shows hamburger icon on mobile */
+  }
+
+  /* Full-Width Centered Dropdown Menu with Transparency for Phone Screens */
+  .navbar-links {
+    display: flex;
+    position: absolute;
+    top: 100%; /* Aligns dropdown directly below the navbar */
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Dark background with 90% opacity */
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    padding: 0; /* Remove any extra padding */
+    margin: 0; /* Remove any extra margin */
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-5px); /* Adjust to move closer to navbar */
+    transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+    z-index: 1;
+  }
+
+  /* Open state for the dropdown */
+  .navbar-links.open {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navbar-links li {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Centered Toggle Switch */
+  .navbar-links .switch {
+    margin: 10px 0; /* Center the toggle with consistent spacing */
+  }
 }
