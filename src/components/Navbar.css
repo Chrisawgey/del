@@ -13,7 +13,7 @@
 
 /* Logo Styling */
 .logo-image {
-  max-height: 130px;
+  max-height: 140px;
   width: auto;
   transition: transform 0.3s ease; /* Smooth transition for the animation */
   cursor: pointer; /* Change cursor to indicate it’s clickable */
