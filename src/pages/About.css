@@ -1,0 +1,173 @@
+/* General Styling */
+.about-page {
+    padding: 40px 20px;
+    background-color: #f8f8f8; /* Default light background */
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+  }
+  
+  .about-page h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+  
+  /* Dark Mode Styling */
+  .about-page.dark-mode {
+    background-color: #222; /* Dark background */
+    color: #fff; /* Light text color */
+  }
+  
+  .about-page.dark-mode h1 {
+    color: #fff;
+  }
+  
+  /* Team Section */
+  .team {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  /* Team Member Styling */
+  .team-member {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background-color: #fff; /* Default light box */
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dark mode */
+  }
+  
+  .team-member.reverse {
+    flex-direction: row-reverse; /* Alternate layout */
+  }
+  
+  .member-image {
+    flex: 1;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .member-details {
+    flex: 2;
+  }
+  
+  .member-details h2 {
+    font-size: 28px;
+    color: #ff5722; /* Accent color for names */
+    margin-bottom: 15px;
+  }
+  
+  .member-details p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Dark Mode for Boxes */
+  .about-page.dark-mode .team-member {
+    background-color: #222; /* Dark box background */
+    color: #fff; /* Light text for contrast */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Adjusted shadow for dark mode */
+  }
+  
+  .about-page.dark-mode .team-member h2 {
+    color: #ff5722; /* Keep the accent color for names */
+  }
+  
+  .about-page.dark-mode .team-member p {
+    color: #ddd; /* Slightly lighter text for descriptions */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .team-member {
+      flex-direction: column; /* Stack layout for smaller screens */
+      text-align: center;
+    }
+  
+    .team-member.reverse {
+      flex-direction: column;
+    }
+  
+    .member-image {
+      max-width: 100%;
+    }
+  
+    .member-details {
+      padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-page h1 {
+      font-size: 36px; /* Smaller font size for very small screens */
+    }
+  
+    .member-details h2 {
+      font-size: 24px; /* Adjust member name size */
+    }
+  
+    .member-details p {
+      font-size: 14px; /* Adjust text size for readability */
+    }
+  }
+  
+  /* Family Section */
+.family-section {
+    text-align: center;
+    margin: 40px 20px;
+  }
+  
+  .family-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .family-photo {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Carousel Section */
+  .carousel-section {
+    margin: 40px 20px;
+    text-align: center;
+  }
+  
+  .carousel-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .carousel-image:hover {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .family-photo {
+      max-width: 100%;
+    }
+  
+    .carousel-image {
+      border-radius: 5px;
+    }
+  }
+  

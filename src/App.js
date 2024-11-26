@@ -1,26 +1,23 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
 import About from './pages/About';
-import Admin from './pages/Admin';
-import './App.css';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
+    setDarkMode(!darkMode);
   };
 
   return (
     <Router>
-      <div className={`app ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
-        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
+        <Navbar toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route path="/" element={<Home darkMode={darkMode} />} />
+          <Route path="/about" element={<About darkMode={darkMode} />} />
         </Routes>
       </div>
     </Router>
