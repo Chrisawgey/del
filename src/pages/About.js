@@ -61,14 +61,16 @@ function About({ darkMode }) {
           <div className="member-details">
             <h2>Jimmy Barraboza</h2>
             <p>
-            The Deli of Springfield was founded on December 7th, 2023. The creation of the name 
-            came from the realization that every surrounding town has a food place named after 
-            the town, and that’s exactly what was missing in Springfield, NJ. We bring our own 
-            recipes for people to try, and our mission is to serve freshness and quality. Most 
-            importantly, our secret that sets us apart from everyone else is that we serve everything 
-            with love and passion. We’re proud to be a family-run business, and we look forward to 
-            continuing to serve Springfield and the surrounding towns for many years to come. We are 
-            “Where Quality Meets Flavor – We Serve Only the Best!” – The Deli of Springfield
+            My name is Jimmy Barraboza, and my dream has always been to make my parents’ sacrifices get rewarded. After seeing them work 
+            hard for over 25 years without feeling appreciated, I knew it was time to take a leap of faith and open The Deli of Springfield. 
+            Thanks to my parents, I’ve been able to achieve so many things, including being part of the National Honors Society in high school,
+             graduating with high honors from Union County College, and earning my degree in Accounting and Finance from Kean University, graduating 
+             cum laude. In high school, I was part of a state champion soccer team and also competed in wrestling and track. I’m now working as a 
+             full-time accountant while also managing the deli on the weekends. My goal is to become a successful entrepreneur and give back to the 
+             community in the future. A special shoutout to my brother Alex, who came up with the name "The Deli of Springfield" after our research 
+             revealed a need for a place like this in our town. We truly appreciate all our customers because, without you, none of this would be possible. 
+             We hope to continue to innovate and bring new ideas to the community. We like to think of ourselves as not just a deli or a diner, but something
+              in between a "Delin."
 
             </p>
           </div>

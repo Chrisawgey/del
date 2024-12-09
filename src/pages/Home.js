@@ -6,6 +6,7 @@ import 'swiper/css'; // Core Swiper styles
 import 'swiper/css/navigation'; // Swiper navigation styles
 import 'swiper/css/pagination'; // Swiper pagination styles
 
+
 import photo1 from '../assets/photo1.jpg'; // Replace with actual photo paths
 import photo2 from '../assets/photo2.jpg';
 import photo3 from '../assets/photo3.jpg';
@@ -46,6 +47,7 @@ function Home() {
       {/* Photo Carousel */}
       <section className="photo-carousel">
         <h2>What We Offer</h2>
+        <p></p>
         <Swiper
           spaceBetween={20}
           slidesPerView={3}
@@ -57,13 +59,13 @@ function Home() {
           loop={true}
         >
           <SwiperSlide>
-            <img src={photo1} alt="Deli item 1" className="carousel-photo" />
+            <img src={photo3} alt="Deli item 1 " className="carousel-photo" />
           </SwiperSlide>
           <SwiperSlide>
             <img src={photo2} alt="Deli item 2" className="carousel-photo" />
           </SwiperSlide>
           <SwiperSlide>
-            <img src={photo3} alt="Deli item 3" className="carousel-photo" />
+            <img src={photo1} alt="Deli item 3" className="carousel-photo" />
           </SwiperSlide>
           {/* Add more SwiperSlides as needed */}
         </Swiper>
