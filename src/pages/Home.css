@@ -41,7 +41,6 @@
   .hero p {
     font-size: 24px;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Subtle shadow for clarity */
   }
 
 .hero button {
@@ -158,6 +157,7 @@
   font-size: 1.2em;
   max-width: 600px;
   margin: 0 auto;
+  color: #f8f8f8;
 }
 
 
