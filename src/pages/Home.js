@@ -6,9 +6,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { MapPin } from 'lucide-react';
 
-import photo1 from '../assets/photo1.jpg';
-import photo2 from '../assets/photo2.jpg';
-import photo3 from '../assets/photo3.jpg';
+import photo1 from '../assets/photo1.jpeg';
+import photo2 from '../assets/photo2.jpeg';
+import photo3 from '../assets/photo3.jpeg';
 
 import tiktokLogo from '../assets/tiktok-logo.png';
 import instagramLogo from '../assets/instagram-logo.png';
@@ -158,19 +158,19 @@ function Home() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-social">
-          <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.tiktok.com/@thedeliofspringfield" target="_blank" rel="noopener noreferrer">
             <img src={tiktokLogo} alt="TikTok" />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/thedeliofspringfield?igsh=YWgzbG16azFubGpr" target="_blank" rel="noopener noreferrer">
             <img src={instagramLogo} alt="Instagram" />
           </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61554868277687" target="_blank" rel="noopener noreferrer">
             <img src={facebookLogo} alt="Facebook" />
           </a>
         </div>
         <div className="footer-content">
-          <p>© 2024 Your Deli Name. All rights reserved.</p>
-          <p>123 Main Street, Springfield, NJ | Contact: (123) 456-7890</p>
+          <p>© 2024 Deli Of Springfield. All rights reserved.</p>
+          <p>234 Morris Ave, Springfield, NJ | Contact: (908) 442-9100</p>
         </div>
       </footer>
     </div>
