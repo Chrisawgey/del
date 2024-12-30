@@ -47,7 +47,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
       <ul className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
         <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
         <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-        <li><Link to="/admin" onClick={toggleMenu}>Admin</Link></li>
+        <li><Link to="/admin" onClick={toggleMenu}>Catering & Private Events</Link></li>
         <li>
           <label className="switch">
             <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
