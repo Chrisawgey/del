@@ -6,8 +6,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { MapPin } from 'lucide-react';
 
-import wrapImage from '../assets/wrap.jpeg';
-import video from '../assets/video.mp4'; // Your video file
 import photo1 from '../assets/photo1.jpg';
 import photo2 from '../assets/photo2.jpg';
 import photo3 from '../assets/photo3.jpg';
@@ -33,7 +31,7 @@ function Home() {
   };
 
   // Background rotation logic
-  const backgrounds = [sandwichGif, video2, photo1, video];
+  const backgrounds = [sandwichGif, video2, photo1];
   const [currentBackground, setCurrentBackground] = useState(0);
 
   useEffect(() => {
