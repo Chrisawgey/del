@@ -1,13 +1,13 @@
-// Home.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
-import wrapImage from '../assets/wrap.jpeg';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { MapPin } from 'lucide-react';
 
+import wrapImage from '../assets/wrap.jpeg';
+import video from '../assets/video.mp4'; // Your video file
 import photo1 from '../assets/photo1.jpg';
 import photo2 from '../assets/photo2.jpg';
 import photo3 from '../assets/photo3.jpg';
@@ -15,7 +15,7 @@ import photo3 from '../assets/photo3.jpg';
 import tiktokLogo from '../assets/tiktok-logo.png';
 import instagramLogo from '../assets/instagram-logo.png';
 import facebookLogo from '../assets/facebook-logo.png';
-
+import sandwichGif from '../assets/sandwich.gif';
 
 
 
@@ -31,13 +31,45 @@ function Home() {
     window.open(mapsUrl, '_blank');
   };
 
+  // Background rotation logic
+  const backgrounds = [sandwichGif, wrapImage, photo1, video];
+  const [currentBackground, setCurrentBackground] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBackground((prev) => (prev + 1) % backgrounds.length);
+    }, 5000); // Change every 5 seconds
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [backgrounds.length]);
+
   return (
     <div className="home">
       {/* Hero Banner */}
       <section
         className="hero"
-        style={{ backgroundImage: `url(${wrapImage})` }}
+        style={{
+          backgroundImage: backgrounds[currentBackground].endsWith('.mp4')
+            ? undefined
+            : `url(${backgrounds[currentBackground]})`,
+        }}
       >
+        {backgrounds[currentBackground].endsWith('.mp4') && (
+          <video
+            src={backgrounds[currentBackground]}
+            autoPlay
+            muted
+            loop
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: -1,
+            }}
+          />
+        )}
         <h1>Welcome to Our Deli</h1>
         <p>Where Quality Meets Flavor – We Serve Only the Best!</p>
         <button
@@ -126,21 +158,21 @@ function Home() {
 
       {/* Footer */}
       <footer className="footer">
-  <div className="footer-social">
-    <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
-      <img src={tiktokLogo} alt="TikTok" />
-    </a>
-    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-    <img src={instagramLogo} alt="Instagram" />
-    </a>
-    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-    <img src={facebookLogo} alt="Facebook" />
-    </a>
-  </div>
-  <div className="footer-content">
-    <p>© 2024 Your Deli Name. All rights reserved.</p>
-    <p>123 Main Street, Springfield, NJ | Contact: (123) 456-7890</p>
-  </div>
+        <div className="footer-social">
+          <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+            <img src={tiktokLogo} alt="TikTok" />
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src={instagramLogo} alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src={facebookLogo} alt="Facebook" />
+          </a>
+        </div>
+        <div className="footer-content">
+          <p>© 2024 Your Deli Name. All rights reserved.</p>
+          <p>123 Main Street, Springfield, NJ | Contact: (123) 456-7890</p>
+        </div>
       </footer>
     </div>
   );
