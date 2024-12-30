@@ -16,6 +16,7 @@ import tiktokLogo from '../assets/tiktok-logo.png';
 import instagramLogo from '../assets/instagram-logo.png';
 import facebookLogo from '../assets/facebook-logo.png';
 import sandwichGif from '../assets/sandwich.gif';
+import video2 from '../assets/video2.gif'
 
 
 
@@ -32,7 +33,7 @@ function Home() {
   };
 
   // Background rotation logic
-  const backgrounds = [sandwichGif, wrapImage, photo1, video];
+  const backgrounds = [sandwichGif, video2, photo1, video];
   const [currentBackground, setCurrentBackground] = useState(0);
 
   useEffect(() => {
