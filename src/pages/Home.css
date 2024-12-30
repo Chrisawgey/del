@@ -31,17 +31,16 @@
 }
 
 .hero h1 {
-    font-size: 64px; /* Increase font size for emphasis */
-    font-weight: bold; /* Make the font weight bold */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to make it pop */
-    margin-bottom: 10px;
-  }
-  
+  font-size: 64px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin-bottom: 10px;
+}
 
-  .hero p {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
+.hero p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
 
 .hero button {
   padding: 10px 20px;
@@ -59,25 +58,113 @@
   transform: scale(1.05);
 }
 
-/* Responsive Hero */
+/* Location Section */
+.location {
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #eee;
+}
+
+.location-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.location-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+
+.map-container {
+  margin-top: 15px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 600px;  /* Make map container smaller */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.location-map {
+  width: 100%;
+  height: 180px;  /* Reduced height */
+  border-radius: 6px;
+}
+
+.dark-mode .location {
+  background-color: #222;
+  border-bottom: 1px solid #333;
+}
+
+.location-icon {
+  color: #dc501d;
+}
+
+.dark-mode .location-icon {
+  color: #ff5722;
+}
+
+.location-text {
+  text-align: left;
+}
+
+.location-text h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.dark-mode .location-text h3 {
+  color: #fff;
+}
+
+.location-text p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.dark-mode .location-text p {
+  color: #ccc;
+}
+
+.directions-button {
+  padding: 8px 16px;
+  background-color: #dc501d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.directions-button:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
   .hero {
-    
     background-position: center top;
   }
 
   .hero h1 {
-    font-size: 64px; /* Increase font size for emphasis */
-    font-weight: bold; /* Make the font weight bold */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow to make it pop */
+    font-size: 64px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin-bottom: 10px;
   }
-  
 
   .hero p {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Subtle shadow for clarity */
+    font-size: 18px;
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   }
 
   .hero button {
@@ -91,55 +178,32 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
+
   .hero button:hover {
     background-color: #e64a19;
   }
-}
 
-/* Daily Specials */
-.specials {
-  padding: 50px 20px;
-  text-align: center;
-}
-
-.specials h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.specials-list {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.special {
-  background-color: #a48973;
-  padding: 20px;
-  border-radius: 5px;
-  width: 200px;
-}
-
-.dark-mode .special {
-  background-color: #333333;
-}
-
-/* Responsive Specials Section */
-@media (max-width: 768px) {
-  .specials-list {
+  .location-content {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+  }
+  
+  .location-text {
+    text-align: center;
   }
 
-  .special {
-    width: 80%;
-    margin-bottom: 20px;
+  .map-container {
+    margin-top: 15px;
+  }
+  
+  .location-map {
+    height: 200px;
   }
 }
 
 /* About Section */
 .about {
-  padding: 50px 20px;
+  padding: 10px 20px;
   text-align: center;
   background-color: #a7907a;
 }
@@ -160,20 +224,21 @@
   color: #f8f8f8;
 }
 
-
-/* Responsive About Section */
-@media (max-width: 768px) {
-  .about p {
-    font-size: 1em;
-    padding: 0 10px;
-  }
-}
-
-/* Photo Carousel Section */
+/* Photo Carousel */
 .photo-carousel {
   text-align: center;
   padding: 20px 25px;
-  background-color: #f8f8f8;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.light-mode .photo-carousel {
+  background-color: #f8f8f8; /* Light mode background */
+  color: #000000;
+}
+
+.dark-mode .photo-carousel {
+  background-color: #333; /* Dark mode background */
+  color: #ffffff;
 }
 
 .photo-carousel h2 {
@@ -190,92 +255,110 @@
 }
 
 .carousel-photo:hover {
-  transform: scale(1.05); /* Subtle zoom effect on hover */
-}
-/* Global Dark Mode Styling */
-.dark-mode {
-  background-color: #000;
-  color: #fff;
+  transform: scale(1.05);
 }
 
-.dark-mode .hero {
-  color: #fff;
-}
 
-.dark-mode .specials {
-  background-color: #222;
-}
-
-.dark-mode .photo-carousel {
-  background-color: #222; /* Dark background for carousel */
-}
-
-.dark-mode .photo-carousel h2 {
-  color: #fff;
-}
-
-.dark-mode .carousel-photo {
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1); /* Subtle light shadow */
-}
-
-/* Dark Mode Toggle */
-.dark-mode-toggle {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 100;
-}
-
-.dark-mode-toggle input {
-  display: none;
-}
-
-.dark-mode-toggle .slider {
-  position: relative;
-  width: 50px;
-  height: 24px;
-  background-color: #ccc;
-  border-radius: 24px;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.dark-mode-toggle .slider:before {
-  content: '';
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background-color: white;
-  border-radius: 50%;
-  top: 3px;
-  left: 3px;
-  transition: 0.4s;
-}
-
-.dark-mode-toggle input:checked + .slider {
-  background-color: #ff5722;
-}
-
-.dark-mode-toggle input:checked + .slider:before {
-  transform: translateX(26px);
-}
+/* Menu Button */
 .menu-button {
-  background-color: #ffcc00; /* Keep the original button color */
-  color: #000; /* Button text color */
-  border: none; /* Remove borders */
-  border-radius: 5px; /* Rounded corners */
-  font-size: 1rem; /* Text size */
-  padding: 10px 20px; /* Adjust padding for better proportions */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth hover effect */
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .menu-button:hover {
-  background-color: #ffaa00; /* Slightly darker color on hover */
+  background-color: #ffaa00;
 }
 
 .hero .menu-button {
-  width: auto; /* Let the width adjust to the content */
-  max-width: 200px; /* Prevent it from becoming too wide */
-  margin-top: 20px; /* Add spacing from the text */
+  width: auto;
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: var(--footer-bg-color); /* Match light/dark theme background */
+  color: var(--footer-text-color); /* Match light/dark theme text color */
+  padding: 20px 10px;
+  text-align: center;
+  border-top: 2px solid var(--footer-border-color); /* Subtle border */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #222; /* Default dark theme footer color */
+  color: white; /* Default text color for dark theme */
+  padding: 20px 10px;
+  text-align: center;
+  border-top: 2px solid #444; /* Subtle dark border */
+}
+
+/* Light Theme Override */
+[data-theme='light'] .footer {
+  background-color: white; /* Light theme footer color */
+  color: #222; /* Light theme text color */
+  border-top: 2px solid #ddd; /* Subtle light border */
+}
+
+/* Social Media Section */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Spacing between icons */
+  margin-bottom: 15px;
+}
+
+.footer-social a {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  opacity: 0.8; /* Dim effect */
+}
+
+.footer-social img {
+  width: 30px; /* Adjust the size for icons */
+  height: 30px;
+  filter: var(--footer-icon-filter); /* Dark/light theme-friendly icon colors */
+}
+
+/* Footer Content */
+.footer-content {
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center; /* Center align the content */
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+/* Social Media Icons */
+.footer-social {
+  display: flex;
+  justify-content: center; /* Center align the icons */
+  gap: 15px; /* Space between icons */
+  margin-top: 10px;
+}
+
+.footer-social img {
+  width: 80px; /* Adjusted size */
+  height: 80px;
+  border-radius: 50%; /* Rounded borders */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-social img:hover {
+  transform: scale(1.2); /* Slightly bigger zoom effect */
+  opacity: 0.9; /* Slight dim effect */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
 }
