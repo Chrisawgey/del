@@ -1,0 +1,281 @@
+/* General Container Styling */
+.catering-container {
+    background-color: #222;
+    color: #f9f9f9;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  /* Heading Styling */
+  .catering-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #f4a261;
+  }
+  
+  /* Description Styling */
+  .catering-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Carousel Container */
+  .carousel-container {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-image {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Dots Styling */
+  .slick-dots li button:before {
+    color: #f4a261;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #e76f51;
+  }
+  
+  /* Carousel Arrows Styling */
+  .slick-prev,
+  .slick-next {
+    z-index: 2;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  .slick-prev {
+    left: 10px;
+  }
+  
+  .slick-next {
+    right: 10px;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: "slick";
+    font-size: 20px;
+    line-height: 1;
+    opacity: 1;
+    color: #fff;
+  }
+  
+  /* Remove Arrows on Mobile */
+  @media (max-width: 768px) {
+    .slick-prev,
+    .slick-next {
+      display: none !important;
+    }
+  }
+  
+  /* Form Styling */
+  .catering-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .catering-input,
+  .catering-textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #444;
+    color: #f9f9f9;
+    outline: none;
+  }
+  
+  .catering-input::placeholder,
+  .catering-textarea::placeholder {
+    color: #aaa;
+  }
+  
+  .catering-textarea {
+    height: 120px;
+    resize: none;
+  }
+  
+  .catering-submit-button {
+    background: #f4a261;
+    color: #222;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .catering-submit-button:hover {
+    background: #e76f51;
+  }
+  
+  /* Success Message Styling */
+  .catering-success {
+    color: #2a9d8f;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    border-radius: 5px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Responsive Styling */
+  
+  /* Tablet Screens (768px to 1024px) */
+  @media (max-width: 1024px) {
+    .catering-container h1 {
+      font-size: 2.2rem;
+    }
+  
+    .catering-description {
+      font-size: 1.1rem;
+    }
+  
+    .carousel-image {
+      max-height: 350px;
+    }
+  
+    .catering-form {
+      padding: 15px;
+    }
+  
+    .catering-input,
+    .catering-textarea {
+      font-size: 0.95rem;
+      padding: 10px;
+    }
+  
+    .catering-submit-button {
+      font-size: 0.95rem;
+      padding: 10px 15px;
+    }
+  
+    .catering-success {
+      font-size: 1rem;
+      padding: 15px;
+    }
+  }
+  
+  /* Mobile Screens (480px to 768px) */
+  @media (max-width: 768px) {
+    .catering-container {
+      padding: 30px 15px;
+    }
+  
+    .catering-container h1 {
+      font-size: 2rem;
+    }
+  
+    .catering-description {
+      font-size: 1rem;
+    }
+  
+    .carousel-image {
+      max-height: 300px;
+    }
+  
+    .catering-form {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .catering-input,
+    .catering-textarea {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .catering-submit-button {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
+  
+    .catering-success {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  }
+  
+  /* Small Mobile Screens (below 480px) */
+  @media (max-width: 480px) {
+    .catering-container {
+      padding: 20px 10px;
+    }
+  
+    .catering-container h1 {
+      font-size: 1.8rem;
+    }
+  
+    .catering-description {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+  
+    .carousel-image {
+      max-height: 250px;
+    }
+  
+    .catering-form {
+      width: 95%;
+      padding: 10px;
+    }
+  
+    .catering-input,
+    .catering-textarea {
+      font-size: 0.85rem;
+      padding: 6px;
+    }
+  
+    .catering-submit-button {
+      font-size: 0.85rem;
+      padding: 6px 10px;
+    }
+  
+    .catering-success {
+      font-size: 0.85rem;
+      padding: 10px;
+    }
+  }
+  
