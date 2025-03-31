@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { MapPin } from 'lucide-react';
 
 import photo1 from '../assets/photo1.jpeg';
@@ -14,11 +15,9 @@ import tiktokLogo from '../assets/tiktok-logo.png';
 import instagramLogo from '../assets/instagram-logo.png';
 import facebookLogo from '../assets/facebook-logo.png';
 import sandwichGif from '../assets/sandwich.gif';
-import video2 from '../assets/video2.gif'
+import video2 from '../assets/video2.gif';
 
-
-
-function Home() {
+function Home({ darkMode }) {
   const deliLocation = {
     address: "234 Morris Ave, Springfield, NJ 07081",
     coords: { lat: 40.7169, lng: -74.3285 },
@@ -28,6 +27,13 @@ function Home() {
   const handleGetDirections = () => {
     const mapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(deliLocation.address)}`;
     window.open(mapsUrl, '_blank');
+  };
+
+  const handleOrderOnline = () => {
+    window.open(
+      'https://www.clover.com/online-ordering/the-deli-of-springfield-springfield',
+      '_blank'
+    );
   };
 
   // Background rotation logic
@@ -42,7 +48,7 @@ function Home() {
   }, [backgrounds.length]);
 
   return (
-    <div className="home">
+    <div className={`home ${darkMode ? 'dark-mode' : 'light-mode'}`}>
       {/* Hero Banner */}
       <section
         className="hero"
@@ -69,108 +75,160 @@ function Home() {
             }}
           />
         )}
-        <h1>Welcome to Our Deli</h1>
-        <p>Where Quality Meets Flavor – We Serve Only the Best!</p>
-        <button
-          className="menu-button"
-          onClick={() =>
-            window.open(
-              'https://order.online/store/the-deli-of-springfield-springfield-27522797/?hideModal=true&pickup=true',
-              '_blank'
-            )
-          }
-        >
-          See Our Menu
-        </button>
-      </section>
-
-      {/* Location Section */}
-      <section className="location">
-        <div className="location-container">
-          <div className="location-content">
-            <MapPin size={24} className="location-icon" />
-            <div className="location-text">
-              <h3>Find Us Here</h3>
-              <p>{deliLocation.address}</p>
-            </div>
-            <button className="directions-button" onClick={handleGetDirections}>
+        <div className="hero-content">
+          <h1>Welcome to The Deli of Springfield</h1>
+          <p className="hero-tagline">Where Quality Meets Flavor – We Serve Only the Best!</p>
+          <div className="hero-buttons">
+            <button
+              className="primary-button"
+              onClick={handleOrderOnline}
+            >
+              Order Online
+            </button>
+            <button
+              className="secondary-button"
+              onClick={handleGetDirections}
+            >
               Get Directions
             </button>
           </div>
-          <div className="map-container">
-            <iframe
-              src={deliLocation.mapUrl}
-              width="100%"
-              height="250"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Deli Location"
-              className="location-map"
-            />
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className={`about-section ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+        <div className="section-container">
+          <h2 className="section-title">Who We Are</h2>
+          <div className="divider"></div>
+          <p className="about-content">
+            The Deli of Springfield was founded on December 7th, 2023. The creation
+            of the name came from the realization that every surrounding town has a
+            food place named after the town, and that's exactly what was missing in
+            Springfield, NJ. We bring our own recipes for people to try, and our
+            mission is to serve freshness and quality. Most importantly, our secret
+            that sets us apart from everyone else is that we serve everything with
+            love and passion. We're proud to be a family-run business, and we look
+            forward to continuing to serve Springfield and the surrounding towns
+            for many years to come.
+          </p>
+        </div>
+      </section>
+
+      {/* Menu Showcase */}
+      <section className={`menu-showcase ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+        <div className="section-container">
+          <h2 className="section-title">What We Offer</h2>
+          <div className="divider"></div>
+          <Swiper
+            modules={[Pagination, Autoplay, Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            centeredSlides={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            loop={true}
+            className="menu-carousel"
+          >
+            <SwiperSlide>
+              <div className="menu-item">
+                <img src={photo3} alt="Deli item 1" className="menu-image" />
+                <div className="menu-caption">Fresh Sandwiches</div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="menu-item">
+                <img src={photo2} alt="Deli item 2" className="menu-image" />
+                <div className="menu-caption">Daily Specials</div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="menu-item">
+                <img src={photo1} alt="Deli item 3" className="menu-image" />
+                <div className="menu-caption">Homemade Recipes</div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+          <div className="menu-cta">
+            <button 
+              className="primary-button"
+              onClick={handleOrderOnline}
+            >
+              View Full Menu
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Photo Carousel */}
-      <section className="photo-carousel">
-        <h2>What We Offer</h2>
-        <Swiper
-          spaceBetween={20}
-          slidesPerView={3}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          loop={true}
-        >
-          <SwiperSlide>
-            <img src={photo3} alt="Deli item 1" className="carousel-photo" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo2} alt="Deli item 2" className="carousel-photo" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src={photo1} alt="Deli item 3" className="carousel-photo" />
-          </SwiperSlide>
-        </Swiper>
-      </section>
-
-      {/* About Section */}
-      <section className="about">
-        <h2>Who We Are</h2>
-        <p>
-          The Deli of Springfield was founded on December 7th, 2023. The creation
-          of the name came from the realization that every surrounding town has a
-          food place named after the town, and that's exactly what was missing in
-          Springfield, NJ. We bring our own recipes for people to try, and our
-          mission is to serve freshness and quality. Most importantly, our secret
-          that sets us apart from everyone else is that we serve everything with
-          love and passion. We're proud to be a family-run business, and we look
-          forward to continuing to serve Springfield and the surrounding towns
-          for many years to come. We are "Where Quality Meets Flavor – We Serve
-          Only the Best!" – The Deli of Springfield
-        </p>
+      {/* Location Section */}
+      <section className={`location-section ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+        <div className="section-container">
+          <h2 className="section-title">Find Us</h2>
+          <div className="divider"></div>
+          
+          <div className="location-info">
+            <div className="location-details">
+              <div className="location-icon-wrapper">
+                <MapPin size={28} className="location-icon" />
+              </div>
+              <div className="location-text">
+                <h3>Our Location</h3>
+                <p>{deliLocation.address}</p>
+                <p>Contact: (908) 442-9100</p>
+                <button 
+                  className="directions-button" 
+                  onClick={handleGetDirections}
+                >
+                  Get Directions
+                </button>
+              </div>
+            </div>
+            
+            <div className="map-container">
+              <iframe
+                src={deliLocation.mapUrl}
+                width="100%"
+                height="300"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Deli Location"
+                className="location-map"
+              />
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="footer-social">
-          <a href="https://www.tiktok.com/@thedeliofspringfield" target="_blank" rel="noopener noreferrer">
-            <img src={tiktokLogo} alt="TikTok" />
-          </a>
-          <a href="https://www.instagram.com/thedeliofspringfield?igsh=YWgzbG16azFubGpr" target="_blank" rel="noopener noreferrer">
-            <img src={instagramLogo} alt="Instagram" />
-          </a>
-          <a href="https://www.facebook.com/profile.php?id=61554868277687" target="_blank" rel="noopener noreferrer">
-            <img src={facebookLogo} alt="Facebook" />
-          </a>
-        </div>
-        <div className="footer-content">
-          <p>© 2024 Deli Of Springfield. All rights reserved.</p>
-          <p>234 Morris Ave, Springfield, NJ | Contact: (908) 442-9100</p>
+      <footer className={`footer ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+        <div className="footer-container">
+          <div className="footer-social">
+            <a href="https://www.tiktok.com/@thedeliofspringfield" target="_blank" rel="noopener noreferrer">
+              <img src={tiktokLogo} alt="TikTok" />
+            </a>
+            <a href="https://www.instagram.com/thedeliofspringfield?igsh=YWgzbG16azFubGpr" target="_blank" rel="noopener noreferrer">
+              <img src={instagramLogo} alt="Instagram" />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61554868277687" target="_blank" rel="noopener noreferrer">
+              <img src={facebookLogo} alt="Facebook" />
+            </a>
+          </div>
+          <div className="footer-content">
+            <p>© 2024 The Deli of Springfield. All rights reserved.</p>
+            <p>234 Morris Ave, Springfield, NJ | Contact: (908) 442-9100</p>
+          </div>
         </div>
       </footer>
     </div>

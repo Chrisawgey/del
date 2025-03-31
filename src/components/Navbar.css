@@ -4,11 +4,31 @@
   justify-content: center; /* Center the logo */
   align-items: center;
   padding: 1px 2px;
-  background-color: #121111;
   color: white;
   font-family: Arial, sans-serif;
   position: relative;
   z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode (default) */
+.navbar.dark {
+  background-color: #121111;
+  color: white;
+}
+
+/* Light mode */
+.navbar.light {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.navbar.light .navbar-links li a {
+  color: #333;
+}
+
+.navbar.light .hamburger .bar {
+  background-color: #333;
 }
 
 /* Logo Styling */
@@ -16,7 +36,7 @@
   max-height: 140px;
   width: auto;
   transition: transform 0.3s ease; /* Smooth transition for the animation */
-  cursor: pointer; /* Change cursor to indicate it’s clickable */
+  cursor: pointer; /* Change cursor to indicate it's clickable */
 }
 
 /* Logo Click Animation */
@@ -39,11 +59,28 @@
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
 }
 
 .navbar-links li a:hover {
   background-color: #555;
+}
+
+/* Menu link special styling */
+.navbar-links li a[href="#"]:hover {
+  background-color: #ff5722;
+  color: white;
+}
+
+.navbar.light .navbar-links li a[href="#"]:hover {
+  background-color: #ff5722;
+  color: white;
+}
+
+/* Light mode hover state */
+.navbar.light .navbar-links li a:hover {
+  background-color: #ddd;
 }
 
 /* Toggle Switch Styling */
@@ -129,7 +166,6 @@ input:checked + .slider:before {
     position: absolute;
     top: 100%; /* Aligns dropdown directly below the navbar */
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Dark background with 90% opacity */
     flex-direction: column;
     align-items: center; /* Center items horizontally */
     padding: 0; /* Remove any extra padding */
@@ -140,6 +176,16 @@ input:checked + .slider:before {
     transform: translateY(-5px); /* Adjust to move closer to navbar */
     transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
     z-index: 1;
+  }
+
+  /* Dark mode dropdown */
+  .navbar.dark .navbar-links {
+    background-color: rgba(51, 51, 51, 0.9); /* Dark background with 90% opacity */
+  }
+
+  /* Light mode dropdown */
+  .navbar.light .navbar-links {
+    background-color: rgba(248, 248, 248, 0.9); /* Light background with 90% opacity */
   }
 
   /* Open state for the dropdown */

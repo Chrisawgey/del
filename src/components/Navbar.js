@@ -30,8 +30,16 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
     };
   }, [isMenuOpen]);
 
+  // Handler for external links
+  const handleExternalLink = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+    if (isMenuOpen) {
+      toggleMenu(); // Close the mobile menu after clicking
+    }
+  };
+
   return (
-    <nav className="navbar" ref={navbarRef}>
+    <nav className={`navbar ${isDarkMode ? 'dark' : 'light'}`} ref={navbarRef}>
       <div className="navbar-logo">
         <Link to="/">
           <img src={logo} alt="Our Deli Logo" className="logo-image" />
@@ -47,7 +55,18 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
       <ul className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
         <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
         <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-        <li><Link to="/admin" onClick={toggleMenu}>Catering & Private Events</Link></li>
+        <li>
+          <a 
+            href="#" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleExternalLink('https://www.clover.com/online-ordering/the-deli-of-springfield-springfield');
+            }}
+          >
+            Menu
+          </a>
+        </li>
+        <li><Link to="/admin" onClick={toggleMenu}>Catering & Events</Link></li>
         <li>
           <label className="switch">
             <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />

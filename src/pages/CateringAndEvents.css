@@ -1,281 +1,578 @@
 /* General Container Styling */
 .catering-container {
-    background-color: #222;
-    color: #f9f9f9;
-    padding: 40px 20px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Light/Dark Mode Styling */
+.catering-container.light-mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.catering-container.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* Hero Section */
+.catering-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #ff5722;
+  color: white;
+  position: relative;
+}
+
+.catering-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: inherit;
+  transform: skewY(-1.5deg);
+  z-index: 1;
+}
+
+.catering-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.catering-tagline {
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Section Styling */
+section {
+  padding: 70px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ff5722;
+}
+
+.divider {
+  height: 4px;
+  width: 60px;
+  background-color: #ff5722;
+  margin: 0 auto 40px;
+  border-radius: 2px;
+}
+
+/* Intro Section */
+.catering-intro {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-content p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Carousel Section */
+.catering-showcase {
+  background-color: #f9f9f9;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.dark-mode .catering-showcase {
+  background-color: #0a0a0a;
+}
+
+.carousel-container {
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Slick Slider Customization */
+.slick-dots {
+  bottom: 20px;
+  z-index: 1;
+}
+
+.slick-dots li button:before {
+  color: white;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ff5722;
+  opacity: 1;
+}
+
+.slick-prev, .slick-next {
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+}
+
+.slick-prev {
+  left: 20px;
+}
+
+.slick-next {
+  right: 20px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 30px;
+  opacity: 0.8;
+  color: #ff5722;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Services Section */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.service-card {
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.light-mode .service-card {
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+}
+
+.dark-mode .service-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ff5722;
+}
+
+.service-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Contact Form Section */
+.contact-section {
+  background-color: #f9f9f9;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  border-radius: 0;
+}
+
+.dark-mode .contact-section {
+  background-color: #0a0a0a;
+}
+
+.catering-form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent content from overflowing */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.light-mode .catering-form {
+  background-color: #ffffff;
+}
+
+.dark-mode .catering-form {
+  background-color: #1e1e1e;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%; /* Ensure grid takes full width of container */
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%; /* Ensure form groups take full width */
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.catering-input,
+.catering-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; /* Include padding in width calculation */
+  max-width: 100%; /* Prevent overflow */
+}
+
+.light-mode .catering-input,
+.light-mode .catering-textarea {
+  border: 1px solid #e0e0e0;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.dark-mode .catering-input,
+.dark-mode .catering-textarea {
+  border: 1px solid #444444;
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.catering-input:focus,
+.catering-textarea:focus {
+  outline: none;
+  border-color: #ff5722;
+  box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2);
+}
+
+.catering-textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.catering-submit-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 30px auto 0;
+  padding: 15px 20px;
+  background-color: #ff5722;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.catering-submit-button:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+}
+
+.catering-submit-button:active {
+  transform: translateY(0);
+}
+
+/* Success Message */
+.success-message {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.light-mode .success-message {
+  background-color: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .success-message {
+  background-color: #1e1e1e;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.success-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.success-message h3 {
+  font-size: 1.8rem;
+  color: #4CAF50;
+  margin-bottom: 15px;
+}
+
+.success-message p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.faq-item {
+  padding: 25px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.light-mode .faq-item {
+  background-color: #f9f9f9;
+  border: 1px solid #f0f0f0;
+}
+
+.dark-mode .faq-item {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+}
+
+.faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  color: #ff5722;
+  margin-bottom: 12px;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .catering-hero h1 {
+    font-size: 3rem;
   }
   
-  /* Heading Styling */
-  .catering-container h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #f4a261;
+  .catering-tagline {
+    font-size: 1.3rem;
   }
   
-  /* Description Styling */
-  .catering-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    padding: 0 10px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /* Carousel Container */
-  .carousel-container {
-    max-width: 900px;
-    margin: 0 auto 40px auto;
-  }
-  
-  .carousel-slide {
-    display: flex;
-    justify-content: center;
+  h2 {
+    font-size: 2.2rem;
   }
   
   .carousel-image {
-    max-width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    height: 400px;
   }
   
-  /* Dots Styling */
-  .slick-dots li button:before {
-    color: #f4a261;
+  .faq-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .catering-hero {
+    padding: 60px 20px;
   }
   
-  .slick-dots li.slick-active button:before {
-    color: #e76f51;
+  .catering-hero h1 {
+    font-size: 2.5rem;
   }
   
-  /* Carousel Arrows Styling */
-  .slick-prev,
-  .slick-next {
-    z-index: 2;
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    color: #fff;
-    font-size: 20px;
+  .catering-tagline {
+    font-size: 1.1rem;
   }
   
-  .slick-prev {
-    left: 10px;
+  section {
+    padding: 50px 20px;
   }
   
-  .slick-next {
-    right: 10px;
+  h2 {
+    font-size: 2rem;
   }
   
-  .slick-prev:before,
-  .slick-next:before {
-    font-family: "slick";
-    font-size: 20px;
-    line-height: 1;
-    opacity: 1;
-    color: #fff;
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
   
-  /* Remove Arrows on Mobile */
-  @media (max-width: 768px) {
-    .slick-prev,
-    .slick-next {
-      display: none !important;
-    }
-  }
-  
-  /* Form Styling */
   .catering-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #333;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding: 25px;
+    margin: 0 15px;
+    width: calc(100% - 30px); /* Account for the margins */
+    max-width: none;
   }
   
-  .catering-input,
+  .carousel-image {
+    height: 350px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  
+  .catering-input, 
   .catering-textarea {
-    width: 100%;
-    margin-bottom: 15px;
+    font-size: 16px; /* Prevents zoom on mobile */
     padding: 12px;
-    border: none;
-    border-radius: 5px;
+  }
+  
+  label {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .catering-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .catering-tagline {
     font-size: 1rem;
-    background: #444;
-    color: #f9f9f9;
-    outline: none;
   }
   
-  .catering-input::placeholder,
-  .catering-textarea::placeholder {
-    color: #aaa;
+  h2 {
+    font-size: 1.8rem;
   }
   
+  .intro-content p {
+    font-size: 1.1rem;
+  }
+  
+  .carousel-image {
+    height: 250px;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
+  
+  .catering-form {
+    padding: 20px 15px;
+    margin: 0 10px;
+    width: calc(100% - 20px); /* Account for the margins */
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 12px;
+  }
+  
+  .form-grid {
+    gap: 12px;
+  }
+  
+  .catering-input, 
   .catering-textarea {
-    height: 120px;
-    resize: none;
+    padding: 10px;
+    border-radius: 6px;
   }
   
   .catering-submit-button {
-    background: #f4a261;
-    color: #222;
-    border: none;
-    padding: 12px 20px;
+    padding: 14px 20px;
     font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .catering-submit-button:hover {
-    background: #e76f51;
-  }
-  
-  /* Success Message Styling */
-  .catering-success {
-    color: #2a9d8f;
-    font-size: 1.2rem;
-    font-weight: bold;
     margin-top: 20px;
-    padding: 20px;
-    text-align: center;
-    background-color: #333;
-    border-radius: 5px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
   }
   
-  /* Responsive Styling */
-  
-  /* Tablet Screens (768px to 1024px) */
-  @media (max-width: 1024px) {
-    .catering-container h1 {
-      font-size: 2.2rem;
-    }
-  
-    .catering-description {
-      font-size: 1.1rem;
-    }
-  
-    .carousel-image {
-      max-height: 350px;
-    }
-  
-    .catering-form {
-      padding: 15px;
-    }
-  
-    .catering-input,
-    .catering-textarea {
-      font-size: 0.95rem;
-      padding: 10px;
-    }
-  
-    .catering-submit-button {
-      font-size: 0.95rem;
-      padding: 10px 15px;
-    }
-  
-    .catering-success {
-      font-size: 1rem;
-      padding: 15px;
-    }
+  .success-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
   }
   
-  /* Mobile Screens (480px to 768px) */
-  @media (max-width: 768px) {
-    .catering-container {
-      padding: 30px 15px;
-    }
-  
-    .catering-container h1 {
-      font-size: 2rem;
-    }
-  
-    .catering-description {
-      font-size: 1rem;
-    }
-  
-    .carousel-image {
-      max-height: 300px;
-    }
-  
-    .catering-form {
-      width: 90%;
-      padding: 15px;
-    }
-  
-    .catering-input,
-    .catering-textarea {
-      font-size: 0.9rem;
-      padding: 8px;
-    }
-  
-    .catering-submit-button {
-      font-size: 0.9rem;
-      padding: 8px 12px;
-    }
-  
-    .catering-success {
-      font-size: 0.9rem;
-      padding: 12px;
-    }
+  .success-message h3 {
+    font-size: 1.5rem;
   }
   
-  /* Small Mobile Screens (below 480px) */
-  @media (max-width: 480px) {
-    .catering-container {
-      padding: 20px 10px;
-    }
-  
-    .catering-container h1 {
-      font-size: 1.8rem;
-    }
-  
-    .catering-description {
-      font-size: 0.95rem;
-      margin-bottom: 20px;
-    }
-  
-    .carousel-image {
-      max-height: 250px;
-    }
-  
-    .catering-form {
-      width: 95%;
-      padding: 10px;
-    }
-  
-    .catering-input,
-    .catering-textarea {
-      font-size: 0.85rem;
-      padding: 6px;
-    }
-  
-    .catering-submit-button {
-      font-size: 0.85rem;
-      padding: 6px 10px;
-    }
-  
-    .catering-success {
-      font-size: 0.85rem;
-      padding: 10px;
-    }
+  .success-message p {
+    font-size: 1rem;
   }
-  
+}
