@@ -7,7 +7,7 @@
   color: white;
   font-family: Arial, sans-serif;
   position: relative;
-  z-index: 2;
+  z-index: 10; /* Increased z-index for better stacking */
   transition: background-color 0.3s ease;
 }
 
@@ -50,8 +50,14 @@
   display: flex;
   gap: 20px;
   align-items: center;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  position: relative; /* Allow positioning context for link */
 }
 
 .navbar-links li a {
@@ -67,13 +73,18 @@
   background-color: #555;
 }
 
+/* Special style for the menu link */
+.menu-link {
+  position: relative;
+}
+
 /* Menu link special styling */
-.navbar-links li a[href="#"]:hover {
+.navbar-links li a.menu-link:hover {
   background-color: #ff5722;
   color: white;
 }
 
-.navbar.light .navbar-links li a[href="#"]:hover {
+.navbar.light .navbar-links li a.menu-link:hover {
   background-color: #ff5722;
   color: white;
 }
@@ -165,27 +176,27 @@ input:checked + .slider:before {
     display: flex;
     position: absolute;
     top: 100%; /* Aligns dropdown directly below the navbar */
+    left: 0;
     width: 100%;
     flex-direction: column;
     align-items: center; /* Center items horizontally */
     padding: 0; /* Remove any extra padding */
     margin: 0; /* Remove any extra margin */
-    overflow: hidden;
     max-height: 0;
     opacity: 0;
     transform: translateY(-5px); /* Adjust to move closer to navbar */
     transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
-    z-index: 1;
+    z-index: 9;
   }
 
   /* Dark mode dropdown */
   .navbar.dark .navbar-links {
-    background-color: rgba(51, 51, 51, 0.9); /* Dark background with 90% opacity */
+    background-color: rgba(51, 51, 51, 0.95); /* Dark background with 95% opacity */
   }
 
   /* Light mode dropdown */
   .navbar.light .navbar-links {
-    background-color: rgba(248, 248, 248, 0.9); /* Light background with 90% opacity */
+    background-color: rgba(248, 248, 248, 0.95); /* Light background with 95% opacity */
   }
 
   /* Open state for the dropdown */
@@ -197,13 +208,15 @@ input:checked + .slider:before {
 
   .navbar-links li {
     width: 100%;
-    padding: 10px 0;
     text-align: center;
+    padding: 10px 0;
   }
 
   .navbar-links li a {
+    display: block;
     width: 100%;
-    text-align: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
   }
 
   /* Centered Toggle Switch */

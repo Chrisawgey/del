@@ -33,15 +33,24 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
   // Handler for external links
   const handleExternalLink = (url) => {
     window.open(url, '_blank', 'noopener,noreferrer');
-    if (isMenuOpen) {
-      toggleMenu(); // Close the mobile menu after clicking
-    }
+    setIsMenuOpen(false); // Close the mobile menu after clicking
+  };
+
+  // Use this for direct navigation when React Router isn't working
+  const handleDirectNavigation = (path) => {
+    window.location.href = path;
+    setIsMenuOpen(false);
+  };
+
+  // Close menu on navigation
+  const closeMenu = () => {
+    setIsMenuOpen(false);
   };
 
   return (
     <nav className={`navbar ${isDarkMode ? 'dark' : 'light'}`} ref={navbarRef}>
       <div className="navbar-logo">
-        <Link to="/">
+        <Link to="/" onClick={closeMenu}>
           <img src={logo} alt="Our Deli Logo" className="logo-image" />
         </Link>
       </div>
@@ -53,21 +62,38 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
       </div>
 
       <ul className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
-        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-        <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-        <li>
+        <li className="nav-item">
+          <Link to="/" onClick={closeMenu}>Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/about" onClick={closeMenu}>About Us</Link>
+        </li>
+        <li className="nav-item">
           <a 
             href="#" 
             onClick={(e) => {
               e.preventDefault();
               handleExternalLink('https://www.clover.com/online-ordering/the-deli-of-springfield-springfield');
             }}
+            className="menu-link"
           >
             Menu
           </a>
         </li>
-        <li><Link to="/admin" onClick={toggleMenu}>Catering & Events</Link></li>
-        <li>
+        <li className="nav-item catering-item">
+          {/* Direct anchor tag instead of Link component for troubleshooting */}
+          <a 
+            href="/catering" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleDirectNavigation('/admin');
+            }}
+            className="catering-link"
+          >
+            Catering & Events
+          </a>
+        </li>
+        <li className="nav-item">
           <label className="switch">
             <input type="checkbox" checked={isDarkMode} onChange={toggleDarkMode} />
             <span className="slider"></span>
