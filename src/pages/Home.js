@@ -130,6 +130,7 @@ function Home({ darkMode }) {
             }}
             pagination={{
               clickable: true,
+              el: '.custom-pagination',
             }}
             navigation={true}
             breakpoints={{
@@ -143,13 +144,13 @@ function Home({ darkMode }) {
             <SwiperSlide>
               <div className="menu-item">
                 <img src={photo3} alt="Deli item 1" className="menu-image" />
-                <div className="menu-caption">Fresh Sandwiches</div>
+                <div className="menu-caption">Fresh Salads</div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="menu-item">
                 <img src={photo2} alt="Deli item 2" className="menu-image" />
-                <div className="menu-caption">Daily Specials</div>
+                <div className="menu-caption">Fresh Sandwiches</div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
@@ -159,6 +160,9 @@ function Home({ darkMode }) {
               </div>
             </SwiperSlide>
           </Swiper>
+          {/* Custom pagination outside of the slider */}
+          <div className="custom-pagination"></div>
+          
           <div className="menu-cta">
             <button 
               className="primary-button"
@@ -228,6 +232,9 @@ function Home({ darkMode }) {
           <div className="footer-content">
             <p>© 2024 The Deli of Springfield. All rights reserved.</p>
             <p>234 Morris Ave, Springfield, NJ | Contact: (908) 442-9100</p>
+            <div className="developer-attribution">
+              Created by <a href="https://www.linkedin.com/in/chrisvpopoca/" target="_blank" rel="noopener noreferrer">Christopher Vargas</a>
+            </div>
           </div>
         </div>
       </footer>

@@ -132,8 +132,7 @@ function About({ darkMode }) {
       {/* Mission Section */}
       <section className="mission-section">
         <div className="mission-content">
-          <h2 className="section-title">Our Mission</h2>
-          <div className="divider"></div>
+          
           <p>
             At The Deli of Springfield, we're committed to serving the freshest, highest-quality food 
             made with love and passion. We believe in treating everyone who walks through our doors 

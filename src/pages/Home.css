@@ -151,6 +151,7 @@
 /* Menu Showcase */
 .menu-showcase {
   padding: 80px 0;
+  position: relative;
   background-color: #ffffff;
 }
 
@@ -159,8 +160,7 @@
 }
 
 .menu-carousel {
-  margin-bottom: 40px;
-  padding-bottom: 50px; /* Space for pagination dots */
+  margin-bottom: 60px; /* Increased bottom margin to make room for pagination */
 }
 
 .menu-item {
@@ -169,6 +169,7 @@
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  margin-bottom: 20px; /* Add space between image and pagination */
 }
 
 .menu-image {
@@ -193,11 +194,23 @@
   color: white;
   font-size: 1.5rem;
   font-weight: 600;
+  padding-bottom: 40px; /* Increase padding at the bottom to avoid pagination dots overlap */
 }
 
+/* Custom pagination container outside the slider */
+.custom-pagination {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+/* Menu CTA button */
 .menu-cta {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 /* Swiper Customization */
@@ -206,6 +219,7 @@
   height: 12px;
   background: #ff5722;
   opacity: 0.5;
+  margin: 0 5px;
 }
 
 .swiper-pagination-bullet-active {
@@ -222,6 +236,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: -60px; /* Move buttons up to avoid overlapping with captions */
 }
 
 .swiper-button-next:after,
@@ -419,6 +434,11 @@
   .menu-image {
     height: 350px;
   }
+  
+  .menu-caption {
+    font-size: 1.3rem;
+    padding-bottom: 35px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -461,8 +481,15 @@
   }
   
   .menu-caption {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 15px;
+    padding-bottom: 35px;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 35px;
+    height: 35px;
   }
   
   .location-details {
@@ -497,13 +524,28 @@
     font-size: 1rem;
   }
   
+  .menu-carousel {
+    margin-bottom: 40px;
+  }
+  
   .menu-image {
     height: 250px;
   }
   
   .menu-caption {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 12px;
+    padding-bottom: 30px;
+  }
+  
+  .custom-pagination {
+    margin-top: 5px;
+  }
+  
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
   }
   
   .location-text h3 {
