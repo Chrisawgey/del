@@ -33,7 +33,7 @@ function Home({ darkMode }) {
 
   const handleOrderOnline = () => {
     window.open(
-      'https://www.clover.com/online-ordering/the-deli-of-springfield-springfield',
+      'https://www.seamless.com/menu/the-deli-of-springfield-234-morris-avenue-springfield/7678704',
       '_blank'
     );
   };

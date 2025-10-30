@@ -75,7 +75,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              handleExternalLink('https://www.clover.com/online-ordering/the-deli-of-springfield-springfield');
+              handleExternalLink('https://www.seamless.com/menu/the-deli-of-springfield-234-morris-avenue-springfield/7678704');
             }}
             className="menu-link"
           >
