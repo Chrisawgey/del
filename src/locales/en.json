@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "menu": "Menu",
+    "catering": "Catering & Events"
+  },
+  "home": {
+    "hero": {
+      "title": "Welcome to The Deli of Springfield",
+      "tagline": "Where Quality Meets Flavor – We Serve Only the Best!",
+      "orderOnline": "Order Online",
+      "getDirections": "Get Directions"
+    },
+    "about": {
+      "title": "Who We Are",
+      "content": "The Deli of Springfield was founded on December 7th, 2023. The creation of the name came from the realization that every surrounding town has a food place named after the town, and that's exactly what was missing in Springfield, NJ. We bring our own recipes for people to try, and our mission is to serve freshness and quality. Most importantly, our secret that sets us apart from everyone else is that we serve everything with love and passion. We're proud to be a family-run business, and we look forward to continuing to serve Springfield and the surrounding towns for many years to come."
+    },
+    "menu": {
+      "title": "What We Offer",
+      "item1": "Fresh Salads",
+      "item2": "Fresh Sandwiches",
+      "item3": "Homemade Recipes",
+      "viewMenu": "View Full Menu"
+    },
+    "location": {
+      "title": "Find Us",
+      "ourLocation": "Our Location",
+      "address": "234 Morris Ave, Springfield, NJ 07081",
+      "contact": "Contact: (908) 442-9100",
+      "getDirections": "Get Directions"
+    },
+    "footer": {
+      "rights": "The Deli of Springfield. All rights reserved.",
+      "addressContact": "234 Morris Ave, Springfield, NJ | Contact: (908) 442-9100",
+      "createdBy": "Created by"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "About Us",
+      "tagline": "A Family Story of Passion, Food, and Community"
+    },
+    "story": {
+      "title": "Our Story",
+      "leticia": {
+        "name": "Leticia Barraboza",
+        "text": "After spending over 20 years working in the food industry for other people, I decided it was time to take a risk and follow my dream. Opening The Deli of Springfield has always been a dream of mine. I've helped others open their own deli/bagel shops in Union County, and that motivated me to take a leap of faith. At The Deli of Springfield, we are committed to serving the freshest and highest-quality food, always treating our customers like family and making them feel at home."
+      },
+      "carlos": {
+        "name": "Carlos Rodriguez",
+        "text": "I've worked in the food industry for over 20 years, with the last 17 years spent as the head cook at Barth's Market in New Providence, NJ. Opening The Deli of Springfield was a dream of mine, and now, I'm able to bring those recipes and ideas I had to life. I want every person who walks through our doors to feel like they're at home, whether they're a first-time visitor or a regular. We take pride in making everyone feel like family, and we're excited to continue to serve our community with the same passion."
+      },
+      "jimmy": {
+        "name": "Jimmy Barraboza",
+        "text": "My dream has always been to make my parents' sacrifices get rewarded. After seeing them work hard for over 25 years. I knew it was time to take a leap of faith and open The Deli of Springfield. Thanks to my parents, I've been able to achieve so many things. Stop by and Try us out! Ask for the \"secret menu\"!"
+      }
+    },
+    "family": {
+      "title": "Our Family",
+      "caption": "The heart behind The Deli of Springfield: our family"
+    },
+    "journey": {
+      "title": "Our Journey",
+      "caption1": "The beginning of our dream",
+      "caption2": "Creating memories with our community",
+      "caption3": "Bringing our passion to every plate"
+    },
+    "mission": {
+      "text": "At The Deli of Springfield, we're committed to serving the freshest, highest-quality food made with love and passion. We believe in treating everyone who walks through our doors like family, creating a warm and welcoming space where our community can gather, connect, and enjoy exceptional food. We're not just a deli – we're a \"Delin\": something in between a deli and a diner, bringing the best of both worlds to Springfield."
+    }
+  },
+  "catering": {
+    "hero": {
+      "title": "Catering & Private Events",
+      "tagline": "Elevate your gatherings with our exceptional food and service"
+    },
+    "intro": {
+      "title": "Let Us Make Your Event Special",
+      "text": "From intimate gatherings to large celebrations, The Deli of Springfield offers personalized catering services that bring our delicious, freshly-prepared food to your special occasion. Whether it's a corporate meeting, family celebration, or wedding reception, we create custom menus tailored to your taste and budget."
+    },
+    "showcase": {
+      "title": "Our Catering Showcase"
+    },
+    "services": {
+      "title": "Our Services",
+      "fullService": {
+        "title": "Full-Service Catering",
+        "description": "Let our professional staff handle everything from setup to service and cleanup."
+      },
+      "dropOff": {
+        "title": "Drop-Off Catering",
+        "description": "Delicious food delivered to your location, ready to serve."
+      },
+      "boxedLunches": {
+        "title": "Boxed Lunches",
+        "description": "Perfect for corporate meetings and events with individually packaged meals."
+      },
+      "privateEvents": {
+        "title": "Private Events",
+        "description": "Host your special occasion at our location with customized menus and setups."
+      }
+    },
+    "contact": {
+      "title": "Let's Plan Your Event",
+      "form": {
+        "name": "Your Name",
+        "namePlaceholder": "Full Name",
+        "email": "Email Address",
+        "emailPlaceholder": "your.email@example.com",
+        "phone": "Phone Number",
+        "phonePlaceholder": "(555) 555-5555",
+        "eventDate": "Event Date",
+        "eventType": "Event Type",
+        "eventTypePlaceholder": "Select Event Type",
+        "guestCount": "Number of Guests",
+        "guestCountPlaceholder": "Estimated Guest Count",
+        "message": "Tell Us About Your Event",
+        "messagePlaceholder": "Menu preferences, dietary needs, or special requests...",
+        "submit": "Submit Inquiry"
+      },
+      "success": {
+        "title": "Thank You!",
+        "message": "Your catering inquiry has been submitted successfully. We'll contact you within 24 hours to discuss your event."
+      },
+      "eventTypes": {
+        "wedding": "Wedding Reception",
+        "corporateLunch": "Corporate Lunch",
+        "businessMeeting": "Business Meeting",
+        "holidayParty": "Holiday Party",
+        "birthday": "Birthday Celebration",
+        "graduation": "Graduation Party",
+        "familyGathering": "Family Gathering",
+        "other": "Other"
+      }
+    }
+  }
+}

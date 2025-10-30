@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 
 function Navbar({ isDarkMode, toggleDarkMode }) {
+  const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navbarRef = useRef(null);
 
@@ -36,15 +38,15 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
     setIsMenuOpen(false); // Close the mobile menu after clicking
   };
 
-  // Use this for direct navigation when React Router isn't working
-  const handleDirectNavigation = (path) => {
-    window.location.href = path;
-    setIsMenuOpen(false);
-  };
-
   // Close menu on navigation
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  // Language switcher
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('language', lng);
   };
 
   return (
@@ -55,7 +57,7 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
         </Link>
       </div>
 
-      <div className="hamburger" onClick={toggleMenu}>
+      <div className={`hamburger ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
@@ -63,35 +65,40 @@ function Navbar({ isDarkMode, toggleDarkMode }) {
 
       <ul className={`navbar-links ${isMenuOpen ? 'open' : ''}`}>
         <li className="nav-item">
-          <Link to="/" onClick={closeMenu}>Home</Link>
+          <Link to="/" onClick={closeMenu}>{t('nav.home')}</Link>
         </li>
         <li className="nav-item">
-          <Link to="/about" onClick={closeMenu}>About Us</Link>
+          <Link to="/about" onClick={closeMenu}>{t('nav.about')}</Link>
         </li>
         <li className="nav-item">
-          <a 
-            href="#" 
+          <a
+            href="#"
             onClick={(e) => {
               e.preventDefault();
               handleExternalLink('https://www.clover.com/online-ordering/the-deli-of-springfield-springfield');
             }}
             className="menu-link"
           >
-            Menu
+            {t('nav.menu')}
           </a>
         </li>
-        <li className="nav-item catering-item">
-          {/* Direct anchor tag instead of Link component for troubleshooting */}
-          <a 
-            href="/catering" 
-            onClick={(e) => {
-              e.preventDefault();
-              handleDirectNavigation('/admin');
-            }}
-            className="catering-link"
+        <li className="nav-item">
+          <Link to="/catering" onClick={closeMenu}>{t('nav.catering')}</Link>
+        </li>
+        <li className="nav-item language-switcher">
+          <button
+            className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`}
+            onClick={() => changeLanguage('en')}
           >
-            Catering & Events
-          </a>
+            EN
+          </button>
+          <span className="lang-divider">|</span>
+          <button
+            className={`lang-btn ${i18n.language === 'es' ? 'active' : ''}`}
+            onClick={() => changeLanguage('es')}
+          >
+            ES
+          </button>
         </li>
         <li className="nav-item">
           <label className="switch">

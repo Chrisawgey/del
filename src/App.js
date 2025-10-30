@@ -20,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home darkMode={darkMode} />} />
           <Route path="/about" element={<About darkMode={darkMode} />} />
-          <Route path="/admin" element={<Admin darkMode={darkMode} />} />
+          <Route path="/catering" element={<Admin darkMode={darkMode} />} />
         </Routes>
       </div>
     </Router>

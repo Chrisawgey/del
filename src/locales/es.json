@@ -1,0 +1,138 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "menu": "Menú",
+    "catering": "Catering y Eventos"
+  },
+  "home": {
+    "hero": {
+      "title": "Bienvenido a The Deli of Springfield",
+      "tagline": "Donde la Calidad se Encuentra con el Sabor – ¡Servimos Solo lo Mejor!",
+      "orderOnline": "Ordenar en Línea",
+      "getDirections": "Cómo Llegar"
+    },
+    "about": {
+      "title": "Quiénes Somos",
+      "content": "The Deli of Springfield fue fundado el 7 de diciembre de 2023. El nombre surgió al darnos cuenta de que cada ciudad vecina tiene un lugar de comida con el nombre de la ciudad, y eso era exactamente lo que faltaba en Springfield, NJ. Traemos nuestras propias recetas para que la gente las pruebe, y nuestra misión es servir frescura y calidad. Lo más importante, nuestro secreto que nos distingue de todos los demás es que servimos todo con amor y pasión. Estamos orgullosos de ser un negocio familiar y esperamos continuar sirviendo a Springfield y las ciudades vecinas durante muchos años."
+    },
+    "menu": {
+      "title": "Lo Que Ofrecemos",
+      "item1": "Ensaladas Frescas",
+      "item2": "Sándwiches Frescos",
+      "item3": "Recetas Caseras",
+      "viewMenu": "Ver Menú Completo"
+    },
+    "location": {
+      "title": "Encuéntranos",
+      "ourLocation": "Nuestra Ubicación",
+      "address": "234 Morris Ave, Springfield, NJ 07081",
+      "contact": "Contacto: (908) 442-9100",
+      "getDirections": "Cómo Llegar"
+    },
+    "footer": {
+      "rights": "The Deli of Springfield. Todos los derechos reservados.",
+      "addressContact": "234 Morris Ave, Springfield, NJ | Contacto: (908) 442-9100",
+      "createdBy": "Creado por"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Sobre Nosotros",
+      "tagline": "Una Historia Familiar de Pasión, Comida y Comunidad"
+    },
+    "story": {
+      "title": "Nuestra Historia",
+      "leticia": {
+        "name": "Leticia Barraboza",
+        "text": "Después de pasar más de 20 años trabajando en la industria alimentaria para otras personas, decidí que era hora de tomar un riesgo y seguir mi sueño. Abrir The Deli of Springfield siempre ha sido un sueño mío. He ayudado a otros a abrir sus propias tiendas de delicatessen/bagels en el Condado de Union, y eso me motivó a dar un salto de fe. En The Deli of Springfield, estamos comprometidos a servir la comida más fresca y de la más alta calidad, siempre tratando a nuestros clientes como familia y haciéndolos sentir como en casa."
+      },
+      "carlos": {
+        "name": "Carlos Rodríguez",
+        "text": "He trabajado en la industria alimentaria durante más de 20 años, con los últimos 17 años como cocinero principal en Barth's Market en New Providence, NJ. Abrir The Deli of Springfield fue un sueño mío, y ahora puedo dar vida a esas recetas e ideas que tenía. Quiero que cada persona que entre por nuestras puertas se sienta como en casa, ya sea un visitante por primera vez o un cliente habitual. Nos enorgullecemos de hacer que todos se sientan como familia y estamos emocionados de continuar sirviendo a nuestra comunidad con la misma pasión."
+      },
+      "jimmy": {
+        "name": "Jimmy Barraboza",
+        "text": "Mi sueño siempre ha sido recompensar los sacrificios de mis padres. Después de verlos trabajar duro durante más de 25 años. Sabía que era hora de dar un salto de fe y abrir The Deli of Springfield. Gracias a mis padres, he podido lograr tantas cosas. ¡Pasa y pruébanos! ¡Pregunta por el \"menú secreto\"!"
+      }
+    },
+    "family": {
+      "title": "Nuestra Familia",
+      "caption": "El corazón detrás de The Deli of Springfield: nuestra familia"
+    },
+    "journey": {
+      "title": "Nuestro Viaje",
+      "caption1": "El comienzo de nuestro sueño",
+      "caption2": "Creando recuerdos con nuestra comunidad",
+      "caption3": "Llevando nuestra pasión a cada plato"
+    },
+    "mission": {
+      "text": "En The Deli of Springfield, estamos comprometidos a servir la comida más fresca y de la más alta calidad hecha con amor y pasión. Creemos en tratar a todos los que entran por nuestras puertas como familia, creando un espacio cálido y acogedor donde nuestra comunidad puede reunirse, conectarse y disfrutar de comida excepcional. No somos solo un delicatessen: somos un \"Delin\": algo entre un delicatessen y un restaurante, trayendo lo mejor de ambos mundos a Springfield."
+    }
+  },
+  "catering": {
+    "hero": {
+      "title": "Catering y Eventos Privados",
+      "tagline": "Eleva tus reuniones con nuestra comida y servicio excepcionales"
+    },
+    "intro": {
+      "title": "Déjanos Hacer Tu Evento Especial",
+      "text": "Desde reuniones íntimas hasta grandes celebraciones, The Deli of Springfield ofrece servicios de catering personalizados que llevan nuestra deliciosa comida recién preparada a tu ocasión especial. Ya sea una reunión corporativa, celebración familiar o recepción de boda, creamos menús personalizados adaptados a tu gusto y presupuesto."
+    },
+    "showcase": {
+      "title": "Nuestro Catálogo de Catering"
+    },
+    "services": {
+      "title": "Nuestros Servicios",
+      "fullService": {
+        "title": "Catering de Servicio Completo",
+        "description": "Deja que nuestro personal profesional se encargue de todo, desde la preparación hasta el servicio y la limpieza."
+      },
+      "dropOff": {
+        "title": "Catering para Entrega",
+        "description": "Deliciosa comida entregada en tu ubicación, lista para servir."
+      },
+      "boxedLunches": {
+        "title": "Almuerzos en Caja",
+        "description": "Perfecto para reuniones corporativas y eventos con comidas empacadas individualmente."
+      },
+      "privateEvents": {
+        "title": "Eventos Privados",
+        "description": "Organiza tu ocasión especial en nuestra ubicación con menús y configuraciones personalizadas."
+      }
+    },
+    "contact": {
+      "title": "Planifiquemos Tu Evento",
+      "form": {
+        "name": "Tu Nombre",
+        "namePlaceholder": "Nombre Completo",
+        "email": "Correo Electrónico",
+        "emailPlaceholder": "tu.correo@ejemplo.com",
+        "phone": "Número de Teléfono",
+        "phonePlaceholder": "(555) 555-5555",
+        "eventDate": "Fecha del Evento",
+        "eventType": "Tipo de Evento",
+        "eventTypePlaceholder": "Selecciona el Tipo de Evento",
+        "guestCount": "Número de Invitados",
+        "guestCountPlaceholder": "Número Estimado de Invitados",
+        "message": "Cuéntanos Sobre Tu Evento",
+        "messagePlaceholder": "Preferencias de menú, necesidades dietéticas o solicitudes especiales...",
+        "submit": "Enviar Consulta"
+      },
+      "success": {
+        "title": "¡Gracias!",
+        "message": "Tu consulta de catering ha sido enviada exitosamente. Te contactaremos dentro de las 24 horas para discutir tu evento."
+      },
+      "eventTypes": {
+        "wedding": "Recepción de Boda",
+        "corporateLunch": "Almuerzo Corporativo",
+        "businessMeeting": "Reunión de Negocios",
+        "holidayParty": "Fiesta de Vacaciones",
+        "birthday": "Celebración de Cumpleaños",
+        "graduation": "Fiesta de Graduación",
+        "familyGathering": "Reunión Familiar",
+        "other": "Otro"
+      }
+    }
+  }
+}

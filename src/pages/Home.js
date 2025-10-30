@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Home.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
@@ -18,6 +19,7 @@ import sandwichGif from '../assets/sandwich.gif';
 import video2 from '../assets/video2.gif';
 
 function Home({ darkMode }) {
+  const { t } = useTranslation();
   const deliLocation = {
     address: "234 Morris Ave, Springfield, NJ 07081",
     coords: { lat: 40.7169, lng: -74.3285 },
@@ -45,7 +47,7 @@ function Home({ darkMode }) {
       setCurrentBackground((prev) => (prev + 1) % backgrounds.length);
     }, 5000); // Change every 5 seconds
     return () => clearInterval(interval); // Cleanup interval on unmount
-  }, [backgrounds.length]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className={`home ${darkMode ? 'dark-mode' : 'light-mode'}`}>
@@ -76,20 +78,20 @@ function Home({ darkMode }) {
           />
         )}
         <div className="hero-content">
-          <h1>Welcome to The Deli of Springfield</h1>
-          <p className="hero-tagline">Where Quality Meets Flavor – We Serve Only the Best!</p>
+          <h1>{t('home.hero.title')}</h1>
+          <p className="hero-tagline">{t('home.hero.tagline')}</p>
           <div className="hero-buttons">
             <button
               className="primary-button"
               onClick={handleOrderOnline}
             >
-              Order Online
+              {t('home.hero.orderOnline')}
             </button>
             <button
               className="secondary-button"
               onClick={handleGetDirections}
             >
-              Get Directions
+              {t('home.hero.getDirections')}
             </button>
           </div>
         </div>
@@ -98,18 +100,10 @@ function Home({ darkMode }) {
       {/* About Section */}
       <section className={`about-section ${darkMode ? 'dark-mode' : 'light-mode'}`}>
         <div className="section-container">
-          <h2 className="section-title">Who We Are</h2>
+          <h2 className="section-title">{t('home.about.title')}</h2>
           <div className="divider"></div>
           <p className="about-content">
-            The Deli of Springfield was founded on December 7th, 2023. The creation
-            of the name came from the realization that every surrounding town has a
-            food place named after the town, and that's exactly what was missing in
-            Springfield, NJ. We bring our own recipes for people to try, and our
-            mission is to serve freshness and quality. Most importantly, our secret
-            that sets us apart from everyone else is that we serve everything with
-            love and passion. We're proud to be a family-run business, and we look
-            forward to continuing to serve Springfield and the surrounding towns
-            for many years to come.
+            {t('home.about.content')}
           </p>
         </div>
       </section>
@@ -117,58 +111,81 @@ function Home({ darkMode }) {
       {/* Menu Showcase */}
       <section className={`menu-showcase ${darkMode ? 'dark-mode' : 'light-mode'}`}>
         <div className="section-container">
-          <h2 className="section-title">What We Offer</h2>
+          <h2 className="section-title">{t('home.menu.title')}</h2>
           <div className="divider"></div>
           <Swiper
             modules={[Pagination, Autoplay, Navigation]}
             spaceBetween={20}
             slidesPerView={1}
-            centeredSlides={true}
+            centeredSlides={false}
             autoplay={{
-              delay: 3000,
+              delay: 4000,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
             pagination={{
               clickable: true,
               el: '.custom-pagination',
+              dynamicBullets: false,
             }}
             navigation={true}
             breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 15,
+                centeredSlides: true,
+              },
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                centeredSlides: true,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+                centeredSlides: false,
+              },
+              992: {
+                slidesPerView: 3,
+                spaceBetween: 25,
+                centeredSlides: false,
+              },
             }}
             loop={true}
+            speed={600}
+            grabCursor={true}
+            touchRatio={1}
+            touchAngle={45}
             className="menu-carousel"
           >
             <SwiperSlide>
               <div className="menu-item">
                 <img src={photo3} alt="Deli item 1" className="menu-image" />
-                <div className="menu-caption">Fresh Salads</div>
+                <div className="menu-caption">{t('home.menu.item1')}</div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="menu-item">
                 <img src={photo2} alt="Deli item 2" className="menu-image" />
-                <div className="menu-caption">Fresh Sandwiches</div>
+                <div className="menu-caption">{t('home.menu.item2')}</div>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="menu-item">
                 <img src={photo1} alt="Deli item 3" className="menu-image" />
-                <div className="menu-caption">Homemade Recipes</div>
+                <div className="menu-caption">{t('home.menu.item3')}</div>
               </div>
             </SwiperSlide>
           </Swiper>
           {/* Custom pagination outside of the slider */}
           <div className="custom-pagination"></div>
-          
+
           <div className="menu-cta">
-            <button 
+            <button
               className="primary-button"
               onClick={handleOrderOnline}
             >
-              View Full Menu
+              {t('home.menu.viewMenu')}
             </button>
           </div>
         </div>
@@ -177,23 +194,23 @@ function Home({ darkMode }) {
       {/* Location Section */}
       <section className={`location-section ${darkMode ? 'dark-mode' : 'light-mode'}`}>
         <div className="section-container">
-          <h2 className="section-title">Find Us</h2>
+          <h2 className="section-title">{t('home.location.title')}</h2>
           <div className="divider"></div>
-          
+
           <div className="location-info">
             <div className="location-details">
               <div className="location-icon-wrapper">
                 <MapPin size={28} className="location-icon" />
               </div>
               <div className="location-text">
-                <h3>Our Location</h3>
-                <p>{deliLocation.address}</p>
-                <p>Contact: (908) 442-9100</p>
-                <button 
-                  className="directions-button" 
+                <h3>{t('home.location.ourLocation')}</h3>
+                <p>{t('home.location.address')}</p>
+                <p>{t('home.location.contact')}</p>
+                <button
+                  className="directions-button"
                   onClick={handleGetDirections}
                 >
-                  Get Directions
+                  {t('home.location.getDirections')}
                 </button>
               </div>
             </div>
@@ -204,7 +221,7 @@ function Home({ darkMode }) {
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Deli Location"
@@ -230,10 +247,10 @@ function Home({ darkMode }) {
             </a>
           </div>
           <div className="footer-content">
-            <p>© 2024 The Deli of Springfield. All rights reserved.</p>
-            <p>234 Morris Ave, Springfield, NJ | Contact: (908) 442-9100</p>
+            <p>© {new Date().getFullYear()} {t('home.footer.rights')}</p>
+            <p>{t('home.footer.addressContact')}</p>
             <div className="developer-attribution">
-              Created by <a href="https://www.linkedin.com/in/chrisvpopoca/" target="_blank" rel="noopener noreferrer">Christopher Vargas</a>
+              {t('home.footer.createdBy')} <a href="https://www.linkedin.com/in/chrisvpopoca/" target="_blank" rel="noopener noreferrer">Christopher Vargas</a>
             </div>
           </div>
         </div>
