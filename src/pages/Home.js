@@ -33,7 +33,14 @@ function Home({ darkMode }) {
 
   const handleOrderOnline = () => {
     window.open(
-      'https://www.seamless.com/menu/the-deli-of-springfield-234-morris-avenue-springfield/7678704',
+      'https://the-deli-of-springfield-springfield.cloveronline.com/menu/all',
+      '_blank'
+    );
+  };
+
+  const handleDelivery = () => {
+    window.open(
+      'https://www.doordash.com/store/the-deli-of-springfield-springfield-27522797/30645947/',
       '_blank'
     );
   };
@@ -86,6 +93,12 @@ function Home({ darkMode }) {
               onClick={handleOrderOnline}
             >
               {t('home.hero.orderOnline')}
+            </button>
+            <button
+              className="primary-button delivery-button"
+              onClick={handleDelivery}
+            >
+              {t('home.hero.delivery')}
             </button>
             <button
               className="secondary-button"

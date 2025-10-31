@@ -10,6 +10,7 @@
       "title": "Welcome to The Deli of Springfield",
       "tagline": "Where Quality Meets Flavor – We Serve Only the Best!",
       "orderOnline": "Order Online",
+      "delivery": "Order Delivery",
       "getDirections": "Get Directions"
     },
     "about": {
