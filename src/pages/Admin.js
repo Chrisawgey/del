@@ -5,10 +5,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CateringAndEvents.css";
-import food1 from "../assets/food1.jpeg";
-import food2 from "../assets/food2.jpeg";
-import food3 from "../assets/food3.jpeg";
-import food4 from "../assets/food4.jpeg";
+import cat1 from "../assets/cat1.jpeg";
+import cat2 from "../assets/cat2.jpeg";
+import cat3 from "../assets/cat3.jpeg";
+import cat4 from "../assets/cat4.jpeg";
+import cat5 from "../assets/cat5.jpeg";
+import cat6 from "../assets/cat6.jpeg";
+import cat7 from "../assets/cat7.jpeg";
+import cat8 from "../assets/cat8.jpeg";
+import cat9 from "../assets/cat9.jpeg";
 
 const CateringAndEvents = ({ darkMode }) => {
   const { t } = useTranslation();
@@ -47,19 +52,20 @@ const CateringAndEvents = ({ darkMode }) => {
     });
   };
 
-  const images = [food1, food2, food3, food4];
+  const images = [cat1, cat2, cat3, cat4, cat5, cat6, cat7, cat8, cat9];
 
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3500,
     pauseOnHover: true,
     arrows: true,
-    fade: true
+    fade: true,
+    adaptiveHeight: false
   };
 
   const eventTypes = [
